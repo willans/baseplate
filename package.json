@@ -7,7 +7,7 @@
         "watch": "npm-run-all clean --parallel watch:*",
         "watch:webpack": "yarn run dev:webpack --watch",
         "build": "npm-run-all clean build:*",
-        "build:webpack": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js --env.mixfile=build/webpack.mix",
+        "build:webpack": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js --env.mixfile=build/webpack.mix"
     },
     "devDependencies": {
         "@braid/vue-formulate": "^2.4.3",
