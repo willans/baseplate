@@ -1,13 +1,11 @@
 {
     "private": true,
     "scripts": {
-        "clean": "del-cli public/** '!public/(*.txt|*.xml)' '!public/static'",
-        "dev": "npm-run-all clean dev:*",
-        "dev:webpack": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js --env.mixfile=build/webpack.mix",
-        "watch": "npm-run-all clean --parallel watch:*",
-        "watch:webpack": "yarn run dev:webpack --watch",
-        "build": "npm-run-all clean build:*",
-        "build:webpack": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js --env.mixfile=build/webpack.mix"
+        "local": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --env=local --config=node_modules/laravel-mix/setup/webpack.config.js",
+        "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --env=production --config=node_modules/laravel-mix/setup/webpack.config.js",
+        "dev": "yarn run local",
+        "prod": "yarn run production",
+        "watch": "yarn run local --watch"
     },
     "devDependencies": {
         "@braid/vue-formulate": "^2.4.3",
@@ -22,8 +20,10 @@
         "eslint-plugin-import": "^2.17.2",
         "eslint-plugin-vue": "^5.2.2",
         "laravel-mix": "^5.0.1",
+        "laravel-mix-jigsaw": "^1.3.0",
         "lodash": "^4.17.13",
         "npm-run-all": "^4.1.5",
+        "node-cmd": "^3.0.0",
         "postcss-units": "^1.2.1",
         "resolve-url-loader": "^3.1.0",
         "sass": "^1.15.2",
