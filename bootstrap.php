@@ -15,3 +15,14 @@ use TightenCo\Jigsaw\Jigsaw;
  *     // Your code here
  * });
  */
+
+$events->afterBuild(function (Jigsaw $jigsaw) {
+	$destination = $jigsaw->getDestinationPath();
+
+	// copy assets to root of build
+	$jigsaw->getFilesystem()->copyDirectory(__DIR__ . '/resources/_assets/public', $destination);
+
+	// move built templates from custom views directory
+	$jigsaw->getFilesystem()->copyDirectory($destination . '/views', $destination);
+	$jigsaw->getFilesystem()->deleteDirectory($destination . '/views');
+});
