@@ -18,4 +18,7 @@ return [
 	'build' => [
 		'source' => 'resources',
 	],
+
+	// data/content
+	'collections' => [],
 ];
