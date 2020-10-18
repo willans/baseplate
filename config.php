@@ -11,7 +11,7 @@ return [
 	'share_title' => null,
 	'share_description' => null,
 	'site_name' => null,
-	'social_image' => '/static/img/meta/share.png', // asset('/static/img/meta/share.png')
+	'social_image' => '/assets/static/img/meta/share.png', // asset('/static/img/meta/share.png')
 
 	// jigsaw
 	'production' => false,
