@@ -26,9 +26,7 @@
 			},
 			"cleanCss": {},
 			"purgeCssWhitelist": [],
-			"purgeCssWhitelistPatterns": [
-				"^c-trans-"
-			]
+			"purgeCssWhitelistPatterns": []
 		},
 		"js": {
 			"lint": true
