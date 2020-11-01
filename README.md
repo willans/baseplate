@@ -7,5 +7,5 @@ composer install
 
 # compile assets with Laravel Mix
 # options: dev, staging, production
-npm run dev
+yarn run dev
 ```

@@ -6,7 +6,7 @@ const { config: {
 	// browserSync,
 	css,
 	js,
-}, paths } = require('./build/config');
+}, paths } = require('./config');
 
 const postCssPlugins = [
 	require('tailwindcss')('./build/tailwind.config.js'),
@@ -28,7 +28,7 @@ if (mix.inProduction()) {
 
 // Load JavaScript linter support
 if (js.lint) {
-	new ComponentFactory().install(require('./build/mix-modules/ESLintLoader'));
+	new ComponentFactory().install(require('./mix-modules/ESLintLoader'));
 }
 
 // Build
