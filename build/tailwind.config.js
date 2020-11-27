@@ -21,6 +21,9 @@ const widths = mapKeys(mapValues(range(0, c), (v) => ratio(c, v + 1)), (v, k) =>
 const z = variables['z-indexes'];
 const zIndex = z.reduce((v, name, i) => ({ ...v, [name]: z.length - i }), {});
 
+const gridColumn = mapKeys(mapValues(range(13, c + 1), v => `span ${v} / span ${v}`), (v, k) => `span-${parseInt(k, 10) + 13}`);
+const gridColumnStart = mapKeys(mapValues(range(13, c + 1), v => String(v)), v => v);
+
 // tailwind settings
 module.exports = {
 	purge: false,
@@ -79,6 +82,13 @@ module.exports = {
 			'-1': -1,
 		},
 		extend: {
+			gridColumn,
+			gridColumnStart: {
+				...gridColumnStart,
+			},
+			gridTemplateColumns: {
+				24: 'repeat(24, minmax(0, 1fr))',
+			},
 			inset: (theme, { negative }) => ({
 				'1/2': '50%',
 				...widths,

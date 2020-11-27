@@ -1,3 +1,7 @@
+---
+permalink: 404.html
+---
+
 @extends('_layouts/error')
 
 @section('content')

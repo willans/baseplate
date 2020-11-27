@@ -20,11 +20,11 @@ $events->afterBuild(function (Jigsaw $jigsaw) {
 	$destination = $jigsaw->getDestinationPath();
 
 	// copy assets to root of build
-	$jigsaw->getFilesystem()->copyDirectory(__DIR__ . '/resources/_assets/public', $destination);
+	$jigsaw->getFilesystem()->copyDirectory(__DIR__ . '/resources/public', $destination);
 
 	// move 404 page from 404/index.html to 404.html for Netlify
-	$jigsaw->getFilesystem()->move($destination . '/views/404/index.html', $destination . '/404.html');
-	$jigsaw->getFilesystem()->deleteDirectory($destination . '/views/404');
+	// $jigsaw->getFilesystem()->move($destination . '/views/404/index.html', $destination . '/404.html');
+	// $jigsaw->getFilesystem()->deleteDirectory($destination . '/views/404');
 
 	// move built templates from custom views directory
 	$jigsaw->getFilesystem()->copyDirectory($destination . '/views', $destination);
